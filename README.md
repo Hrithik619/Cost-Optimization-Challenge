@@ -44,10 +44,23 @@ Wrap Cosmos DB and Blob logic inside Azure Functions.
 
 Keep API contracts unchanged by abstracting storage logic.
 
-🧪 Edge Cases & Reliability
+Handling Edge Cases and Failure Points
+A robust solution must account for potential issues.
 
-<img width="862" height="250" alt="image" src="https://github.com/user-attachments/assets/8825b29c-ae1b-46d4-8516-a464d3b73d7a" />
+Idempotency: The archival process should be idempotent. If a record is processed multiple times due to a failure, it should not cause duplicates in Blob Storage. Using a unique blob name based on the record ID helps prevent this.
 
+Data Consistency: The archival process is a two-step operation (write to Blob Storage, delete from Cosmos DB). If a failure occurs between these steps, the record might exist in both locations for a short period. The API Gateway's logic should be able to handle this. For example, if a request to Cosmos DB fails, it could fall back to checking Blob Storage.
+
+Data Loss: By writing to Blob Storage before deleting from Cosmos DB, you guarantee that no data is lost. Even if the deletion fails, the data remains in Cosmos DB until the next successful archival run.
+
+High Load: For extremely high record counts, the archival function should use Cosmos DB's Change Feed processor. This is more efficient than polling and querying, as it processes changes in real-time.
+
+Cost-Saving Estimation and Monitoring Ideas
+The primary cost reduction comes from minimizing the provisioned throughput (RU/s) in Cosmos DB.
+
+Cost Estimation: By moving 75% of your data to Blob Storage, you can likely reduce your Cosmos DB RU/s by a significant amount, potentially 70-80%, as the read load on Cosmos DB will be much lower. Blob Storage costs are a fraction of Cosmos DB's. For example, the cost of storing 1 TB of data in Cosmos DB (assuming a minimum of 400 RU/s) is roughly $2,100/month, while storing the same amount in Azure Blob Storage is approximately $20/month.
+
+Monitoring: Use Azure Monitor to track the throughput consumption of your Cosmos DB container. After implementing the solution, you can safely scale down the RU/s to match the new, lower workload for the hot data. Set up alerts for high RU consumption to ensure your new provisioned throughput is adequate. Monitor the archival function's logs to track its success and any failures.
 
 
 
