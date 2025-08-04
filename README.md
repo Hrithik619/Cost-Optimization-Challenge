@@ -14,3 +14,4 @@ Move billing records older than 3 months from Azure Cosmos DB to Azure Blob Stor
          | Cosmos DB (Hot)|               | Blob Storage   |
          |  < 3 months    |               |  > 3 months    |
          +----------------+               +----------------+
+
