@@ -4,6 +4,7 @@
 Move billing records older than 3 months from Azure Cosmos DB to Azure Blob Storage (Archive Tier) while maintaining seamless access via existing APIs. Use Azure Functions to intercept read requests for archived data and serve them from Blob Storage.
 
 🏗️ Architecture Overview
+
 <img width="734" height="377" alt="image" src="https://github.com/user-attachments/assets/2a964f77-1f15-4e17-9bdf-10fc13390edd" />
 
 ⚙️ Implementation Strategy
@@ -45,7 +46,8 @@ Keep API contracts unchanged by abstracting storage logic.
 
 🧪 Edge Cases & Reliability
 
-<img width="883" height="268" alt="image" src="https://github.com/user-attachments/assets/185a4047-7857-43f9-8572-297b2281ffed" />
+<img width="862" height="250" alt="image" src="https://github.com/user-attachments/assets/8825b29c-ae1b-46d4-8516-a464d3b73d7a" />
+
 
 🛠️ Deployment Commands
 
@@ -63,21 +65,6 @@ az storage blob upload \
   --file <local_file_path> \
   --tier Archive
 
-
-🧾 GitHub Repo Instructions
-You can now:
-
-Create a public GitHub repo.
-
-Include:
-
-Architecture diagram (draw.io or PNG)
-
-Python/Azure Function code
-
-README with setup instructions
-
-This conversation transcript
 
 
 
