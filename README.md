@@ -5,7 +5,7 @@ Move billing records older than 3 months from Azure Cosmos DB to Azure Blob Stor
 
 🏗️ Architecture Overview
 
-<img width="541" height="546" alt="image" src="https://github.com/user-attachments/assets/c64af560-746f-40ec-9045-34fc0b0f4d9b" />
+[<img width="541" height="546" alt="image" src="https://github.com/user-attachments/assets/c64af560-746f-40ec-9045-34fc0b0f4d9b" />](https://chatgpt.com/s/m_6890a07042e08191a699c72e53f8b518)
 
 ⚙️ Implementation Strategy
 1. Data Archival Process
