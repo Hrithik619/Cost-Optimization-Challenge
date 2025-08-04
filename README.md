@@ -50,22 +50,41 @@ Keep API contracts unchanged by abstracting storage logic.
 <img width="862" height="250" alt="image" src="https://github.com/user-attachments/assets/8825b29c-ae1b-46d4-8516-a464d3b73d7a" />
 
 
-🛠️ Deployment Commands
+Optional Monitoring and Cost Estimation
+Monitoring Tools:
 
-Cosmos DB Query:
+Azure Monitor + Log Analytics to track:
 
-SELECT * FROM c WHERE c.timestamp < "2023-05-01T00:00:00Z"
+Function execution logs
 
+Cosmos DB RU usage
 
-Azure CLI for Blob Upload:
+Blob storage read/write activity
 
-az storage blob upload \
-  --account-name <storage_account> \
-  --container-name billing-archive \
-  --name <record_id>.json \
-  --file <local_file_path> \
-  --tier Archive
+Alerts for:
 
+High error rates
+
+Slow access times
+
+Blob storage nearing capacity
+
+Cost-Saving Estimation:
+
+Cosmos DB storage cost: ~$0.25/GB/month
+
+Blob Hot storage cost: ~$0.0184/GB/month
+
+Blob Cold storage: ~$0.01/GB/month
+
+Assuming 2M records x 300KB = ~572 GB
+
+Storage Type	Cost for 572 GB
+Cosmos DB	~$143/month
+Blob Storage (Hot)	~$10.5/month
+Blob Storage (Cold)	~$5.72/month
+
+Savings: Up to 90–95% on storage for cold data
 
 
 
