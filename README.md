@@ -1,7 +1,32 @@
-💡 Proposed Solution: Tiered Storage with Azure Functions & Blob Archive
+Azure Serverless Cost Optimization for Billing Records
 
-🧠 Core Idea
-Move billing records older than 3 months from Azure Cosmos DB to Azure Blob Storage (Archive Tier) while maintaining seamless access via existing APIs. Use Azure Functions to intercept read requests for archived data and serve them from Blob Storage.
+📘 Overview
+
+This solution aims to reduce storage costs in an Azure-based serverless architecture by offloading infrequently accessed billing records (older than 3 months) from Cosmos DB to a cheaper storage tier (Azure Blob Storage), while preserving seamless access and maintaining API contracts.
+
+🧩 Problem Summary
+
+Storage: Azure Cosmos DB
+
+Record Size: Up to 300 KB
+
+Volume: 2M+ records
+
+Traffic: Read-heavy
+
+Access Pattern: Records older than 3 months are rarely accessed
+
+🎯 Goals
+
+Reduce Cosmos DB storage costs
+
+Retain access to old records with latency within a few seconds
+
+No changes to existing API contracts
+
+No downtime or data loss
+
+Serverless and simple to maintain
 
 🏗️ Architecture Overview
 
