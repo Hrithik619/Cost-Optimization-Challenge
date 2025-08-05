@@ -20,7 +20,7 @@ Introduce a **Hot-Cold Data Architecture**:
 
 🏗️ Architecture Overview
 
-<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/2da92897-42ce-44d9-823a-078f710dde45" />
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/329857b4-3ef8-4440-bc2a-58ec5b352223" />
 
 ## 💾 Storage Tiering Strategy
 | Data Type | Storage Location | Access Time | Cost            |
