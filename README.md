@@ -32,6 +32,8 @@ Serverless and simple to maintain
 
 [<img width="541" height="546" alt="image" src="https://github.com/user-attachments/assets/c64af560-746f-40ec-9045-34fc0b0f4d9b" />](https://chatgpt.com/s/m_6890a07042e08191a699c72e53f8b518)
 
+https://chatgpt.com/s/m_689189e8ac0081918dcb81caba74aeee
+
 ⚙️ Implementation Strategy
 1. Data Archival Process
 Use a scheduled Azure Function (Timer Trigger) to move old records to Blob Storage.
