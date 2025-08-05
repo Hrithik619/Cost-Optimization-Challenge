@@ -18,7 +18,7 @@ Introduce a **Hot-Cold Data Architecture**:
 - **Archival**: Azure Data Factory or Durable Functions perform scheduled archival.
 
 
-🏗️ Architecture Overview
+## 📊 Architecture Diagram
 
 <img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/329857b4-3ef8-4440-bc2a-58ec5b352223" />
 
